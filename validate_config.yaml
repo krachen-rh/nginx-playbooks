@@ -1,0 +1,7 @@
+- name: Validate Nginx config
+  hosts: all
+  tasks:
+    - name: Validate Nginx config
+      changed_when: false
+      ansible.builtin.command:
+        cmd: nginx -t
