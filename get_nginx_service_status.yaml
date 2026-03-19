@@ -1,0 +1,12 @@
+---
+- name: Checking Service Status
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Populate service facts
+      ansible.builtin.service_facts:
+
+    - name: Print Nginx Service state
+      ansible.builtin.debug:
+        var: ansible_facts.services['nginx.service'].state

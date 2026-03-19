@@ -1,5 +1,6 @@
 - name: Validate Nginx config
   hosts: all
+  gather_facts: false
   tasks:
     - name: Validate Nginx config
       changed_when: false
